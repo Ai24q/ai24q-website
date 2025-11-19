@@ -1,0 +1,13 @@
+baseURL = "https://ai24q.netlify.app" # Замініть на свою URL пізніше
+languageCode = "uk"
+title = "Ai24q"
+
+[[menu.main]]
+  name = "Головна"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Блог"
+  url = "https://ai24q.gitbook.io/ai24q-blog" # ПОКА ЗАГЛУШКА, ми змінимо її пізніше
+  weight = 2
