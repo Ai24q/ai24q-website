@@ -1,23 +1,178 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>{{ .Site.Title }}</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; }
-        nav { margin-bottom: 20px; }
-        nav a { margin-right: 15px; text-decoration: none; font-weight: bold; }
-        h1 { color: #0066CC; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Ai24q — розумні рішення на основі штучного інтелекту | ШІ-агенти, SaaS, автоматизація бізнесу</title>
+  <meta name="description" content="Ai24q — ваш партнер у впровадженні штучного інтелекту. Розробка AI-рішень, ШІ-агентів і SaaS-платформ для автоматизації бізнесу. Від MVP до масштабування." />
+  <meta name="keywords" content="штучний інтелект, AI-рішення, ШІ-агенти, нейронні мережі, автоматизація бізнесу, SaaS, розробка AI" />
+  <meta name="author" content="Ai24q" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ai24q — розумні рішення на основі штучного інтелекту" />
+  <meta property="og:description" content="Розробка AI-рішень, ШІ-агентів і SaaS-продуктів для автоматизації бізнесу. Ваш партнер у впровадженні штучного інтелекту." />
+  <meta property="og:image" content="https://ai24q.com/og-image.jpg" />
+  <meta property="og:url" content="https://ai24q.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ai24q" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ai24q",
+    "url": "https://ai24q.com",
+    "logo": "https://ai24q.com/logo.png",
+    "description": "Ai24q — компанія, що надає розумні рішення на основі штучного інтелекту. Ми створюємо AI-рішення, ШІ-агентів, SaaS-продукти та нейронні мережі для автоматизації бізнесу.",
+    "sameAs": [
+      "https://www.facebook.com/ai24q",
+      "https://www.linkedin.com/company/ai24q",
+      "https://x.com/ai24q"
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>AI</text></svg>">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0f0f1a;--text:#e2e8f0;--accent:#00d4ff;--card:#1a1a2e;--border:#334155;
+      --shadow:rgba(0,212,255,.2);--grad:linear-gradient(135deg,#00d4ff,#7c3aed);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+    .container{max-width:1200px;margin:auto;padding:0 20px;}
+    #progress{position:fixed;top:0;left:0;height:4px;background:var(--accent);width:0;z-index:1000;transition:width .2s;}
+    header{padding:1.5rem 0;position:sticky;top:0;backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:999;}
+    .nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .logo{font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-links a{color:var(--text);text-decoration:none;margin-left:2rem;font-weight:500;position:relative;transition:color .3s;}
+    .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s;}
+    .nav-links a:hover{color:var(--accent);}
+    .nav-links a:hover::after{width:100%;}
+    .lang button{background:none;border:none;color:var(--text);font-weight:500;cursor:pointer;padding:.3rem .6rem;border-radius:6px;transition:.3s;}
+    .lang button.active{background:var(--accent);color:#000;}
+    .hero{padding:7rem 0 5rem;text-align:center;}
+    .hero h1{font-size:3.2rem;margin-bottom:1rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero p{font-size:1.2rem;max-width:700px;margin:auto auto 2rem;color:#94a3b8;}
+    .cta{background:var(--accent);color:#000;padding:.9rem 2rem;border:none;border-radius:12px;font-weight:600;cursor:pointer;font-size:1.1rem;transition:all .3s;box-shadow:0 8px 20px var(--shadow);}
+    .cta:hover{transform:translateY(-3px);box-shadow:0 12px 25px var(--shadow);}
+    section{padding:5rem 0;}
+    h2{font-size:2.3rem;text-align:center;margin-bottom:2.5rem;color:var(--accent);position:relative;}
+    h2::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:70px;height:3px;background:var(--accent);border-radius:2px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem;}
+    .card{background:var(--card);padding:2rem;border-radius:14px;border:1px solid var(--border);transition:all .4s;box-shadow:0 6px 20px rgba(0,0,0,.1);}
+    .card:hover{transform:translateY(-8px);box-shadow:0 16px 35px var(--shadow);border-color:var(--accent);}
+    .card h3{font-size:1.5rem;margin-bottom:.8rem;color:var(--accent);}
+    .service{background:rgba(255,255,255,.03);padding:1.8rem;border-radius:12px;border:1px solid var(--border);transition:.3s;}
+    .service:hover{transform:scale(1.03);border-color:var(--accent);}
+    .service h4{margin-bottom:.5rem;color:var(--accent);}
+    .service p{font-size:.95rem;color:#94a3b8;}
+    .testimonials{background:linear-gradient(135deg,#16213e,#0f0f1a);padding:3rem;border-radius:16px;margin:3rem 0;text-align:center;}
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+    .testi{background:var(--card);padding:1.5rem;border-radius:12px;border:1px solid var(--border);}
+    .testi p{font-style:italic;margin-bottom:1rem;color:#94a3b8;}
+    .testi strong{color:var(--accent);}
+    .final-cta{text-align:center;padding:6rem 0;background:var(--grad);color:#fff;border-radius:18px;margin:3rem 0;}
+    .final-cta h2{color:#fff;margin-bottom:1rem;}
+    .final-cta p{font-size:1.1rem;max-width:650px;margin:auto auto 1.5rem;opacity:.9;}
+    footer{text-align:center;padding:2.5rem 0;border-top:1px solid var(--border);color:#64748b;font-size:.9rem;}
+    @media(max-width:768px){
+      .hero h1{font-size:2.5rem;}
+      .nav-links,.lang{display:none;}
+      .hero{padding:5rem 0 4rem;}
+      section{padding:4rem 0;}
+    }
+  </style>
 </head>
+
 <body>
-    <nav>
-        {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}">{{ .Name }}</a>
-        {{ end }}
-    </nav>
-    <main>
-        {{ .Content }}
-    </main>
+
+  <div id="progress"></div>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">Ai24q</div>
+      <div class="nav-links">
+        <a href="#services">Послуги</a>
+        <a href="#results">Результати</a>
+        <a href="#contact">Контакт</a>
+      </div>
+      <div class="lang">
+        <button class="active" data-lang="uk">УКР</button>
+        <button data-lang="en">ENG</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Розумні рішення на основі штучного інтелекту</h1>
+      <p>Ai24q створює AI-рішення, ШІ-агентів і SaaS-платформи для автоматизації бізнесу. Ми допомагаємо компаніям працювати ефективніше, швидше й розумніше.</p>
+      <button class="cta" onclick="window.open('https://t.me/Ai24qBot','_blank')">Безкоштовний аудит</button>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2>Наші послуги</h2>
+      <div class="grid">
+        <div class="service"><h4>AI-Агенти</h4><p>Розумні системи, що автоматизують клієнтську підтримку, продажі та внутрішні процеси.</p></div>
+        <div class="service"><h4>SaaS-розробка</h4><p>Створення масштабованих хмарних продуктів на основі ШІ.</p></div>
+        <div class="service"><h4>Нейронні мережі</h4><p>Побудова моделей для прогнозування, аналітики й генерації контенту.</p></div>
+        <div class="service"><h4>AI-консалтинг</h4><p>Оцінка готовності бізнесу до впровадження AI, розробка стратегії, інтеграція.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results" style="background:linear-gradient(135deg,#16213e,#0f0f1a);">
+    <div class="container">
+      <h2>Результати Ai24q</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));text-align:center;">
+        <div class="card"><h3>50+</h3><p>впроваджених AI-проєктів</p></div>
+        <div class="card"><h3>5+</h3><p>років досвіду в AI</p></div>
+        <div class="card"><h3>30%</h3><p>середнє підвищення ефективності бізнесу</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2>Відгуки клієнтів</h2>
+      <div class="testi-grid">
+        <div class="testi"><p>"AI-рішення Ai24q допомогло знизити витрати на обробку запитів на 60%!"</p><strong>— Олена М.</strong></div>
+        <div class="testi"><p>"Вражаюча якість і швидкість. Команда Ai24q розуміє бізнес."</p><strong>— Андрій С.</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="final-cta">
+    <div class="container">
+      <h2>Почніть трансформацію з Ai24q</h2>
+      <p>Зв’яжіться з нами для безкоштовного аудиту або консультації з автоматизації бізнесу.</p>
+      <button class="cta" onclick="window.open('https://t.me/Ai24qBot','_blank')">Написати в бот</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 <strong>Ai24q</strong>. Розумні рішення на основі штучного інтелекту.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll',()=>{
+      const s=document.documentElement.scrollTop;
+      const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+      document.getElementById('progress').style.width=(s/h*100)+'%';
+    });
+  </script>
 </body>
 </html>
+
